@@ -3,8 +3,8 @@ import './PokeFetch.css';
 
 
 class PokeFetch extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       pokeInfo: '',
       pokeSprite: '',
@@ -34,7 +34,7 @@ class PokeFetch extends Component {
       <div className={'wrapper'}>
         <button className={'start'} onClick={() => this.fetchPokemon()}>Start!</button>
         <h1 className={'timer'} >Timer Display</h1>
-        <div className={'pokeWrap'}>
+        <div className={'pokeWrap'} >
           <img className={'pokeImg'} src={this.state.pokeSprite} />
           <h1 className={'pokeName'}>{this.state.pokeName}</h1>
         </div>
