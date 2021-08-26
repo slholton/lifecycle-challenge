@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import PokeTimer from './PokeTimer';
 import './PokeFetch.css';
-
 
 class PokeFetch extends Component {
   constructor(props) {
@@ -29,11 +29,27 @@ class PokeFetch extends Component {
       .catch((err) => console.log(err))
   }
 
+  // componentDidMount() {
+  //   interval = setInterval(() => {
+  //     timer((prevTime) => prevTime + 10);
+  //   }, 10);
+  // }
+
+  // componentDidUpdate() {
+  //   let delta = Date.now() - startTimeRef.current;
+  //   setTimeout(time + delta);
+  //   startTimeRef.current = Date.now();
+  // }
+
+  // componentWillUnmount() {
+  //   clearInterval(interval);
+  // }
+
   render() {
     return (
       <div className={'wrapper'}>
         <button className={'start'} onClick={() => this.fetchPokemon()}>Start!</button>
-        <h1 className={'timer'} >Timer Display</h1>
+        <h1 className={'timer'} onClick={() => this.fetchPokemon()}>Timer<PokeTimer /></h1>
         <div className={'pokeWrap'} >
           <img className={'pokeImg'} src={this.state.pokeSprite} />
           <h1 className={'pokeName'}>{this.state.pokeName}</h1>
